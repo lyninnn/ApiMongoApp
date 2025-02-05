@@ -12,6 +12,7 @@ db.createCollection("Player");
 
 /*4.Inserta documentos (uno a uno) en una de las colecciones.*/
 db.Pokemon.insertOne({
+  "_id": ObjectId("60c72b2f9f1b2c6a8f3c3a53"),
   "nombre": "Charizard",
   "tipo": ["Fuego", "Volador"],
   "nivel": 50,
@@ -28,6 +29,7 @@ db.Pokemon.insertOne({
 });
 
 db.Pokemon.insertOne({
+  "_id": ObjectId("60c72b2f9f1b2c6a8f3c3a54"),
   "nombre": "Pikachu",
   "tipo": ["Eléctrico"],
   "nivel": 25,
@@ -41,9 +43,10 @@ db.Pokemon.insertOne({
     { "nombre": "Impactrueno", "daño": 40 },
     { "nombre": "Rayo", "daño": 90 }
   ]
-})
+});
 
 db.Pokemon.insertOne({
+  "_id": ObjectId("60c72b2f9f1b2c6a8f3c3a55"),
   "nombre": "Bulbasaur",
   "tipo": ["Planta", "Veneno"],
   "nivel": 16,
@@ -57,9 +60,10 @@ db.Pokemon.insertOne({
     { "nombre": "Latigazo", "daño": 45 },
     { "nombre": "Rayo Solar", "daño": 120 }
   ]
-})
+});
 
 db.Pokemon.insertOne({
+  "_id": ObjectId("60c72b2f9f1b2c6a8f3c3a56"),
   "nombre": "Squirtle",
   "tipo": ["Agua"],
   "nivel": 18,
@@ -73,35 +77,33 @@ db.Pokemon.insertOne({
     { "nombre": "Pistola Agua", "daño": 40 },
     { "nombre": "Hidrobomba", "daño": 110 }
   ]
-})
-
-
+});
 
 db.Player.insertOne({
   "nombre": "Ash Lin",
   "nivel": 24,
   "equipo": [
-    { "pokemon_id": ObjectId("67a38eb6d41661b5ce072f8b"), "apodo": "Char" },
-    { "pokemon_id": ObjectId("67a38eb6d41661b5ce072f8a"), "apodo": "Pika" }
+    { "pokemon_id": ObjectId("60c72b2f9f1b2c6a8f3c3a53"), "apodo": "Char" },
+    { "pokemon_id": ObjectId("60c72b2f9f1b2c6a8f3c3a54"), "apodo": "Pika" }
   ],
   "logros": [
     { "nombre": "Campeón de Kanto", "fecha": "2019-12-10" },
     { "nombre": "Medalla Roca", "fecha": "2010-11-15" }
   ]
-})
+});
 
 db.Player.insertOne({
   "nombre": "Jazael",
   "nivel": 21,
   "equipo": [
-    { "pokemon_id": ObjectId("67a38eb6d41661b5ce072f8c"), "apodo": "Squir" },
-    { "pokemon_id": ObjectId("67a38eb6d41661b5ce072f8d"), "apodo": "Bulba" }
+    { "pokemon_id": ObjectId("60c72b2f9f1b2c6a8f3c3a56"), "apodo": "Squir" },
+    { "pokemon_id": ObjectId("60c72b2f9f1b2c6a8f3c3a55"), "apodo": "Bulba" }
   ],
   "logros": [
     { "nombre": "Campeón de Kanto", "fecha": "2024-12-10" },
     { "nombre": "Medalla Roca", "fecha": "2023-11-15" }
   ]
-})
+});
 
 
 
