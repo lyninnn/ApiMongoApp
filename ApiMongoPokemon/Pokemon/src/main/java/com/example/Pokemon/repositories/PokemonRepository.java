@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public interface PokemonRepository extends MongoRepository<Pokemon,String> {
-    ArrayList<Pokemon> findByScale(int scale);
-    ArrayList<Pokemon> findTripsByOrigen(String origen);
+    ArrayList<Pokemon> findByTipo(String tipo);
+    ArrayList<Pokemon> findTripsByNombre(String nombre);
     ArrayList<Pokemon> findTripsByOrigenAndDestination(String origen, String destination);
     ArrayList<Pokemon> findTripsByOrigenOrDestination(String origen, String destination); //En el caso de un OR
     int countTripsByOrigenOrDestination(String origen, String destino);
