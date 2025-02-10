@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/pokemon")
-@Tag(name = "Pokémon", description = "API REST para gestionar Pokémones")
+@Tag(name = "Pokemon", description = "API REST para gestionar Pokémones")
 public class PokemonCon {
 
     @Autowired

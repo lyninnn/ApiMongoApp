@@ -1,6 +1,7 @@
 package com.example.Pokemon.repositories;
 
 import com.example.Pokemon.models.Player;
+import com.example.Pokemon.models.PokemonEquipo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 public interface PlayerRepository extends MongoRepository<Player, String> {
 
-    List<Player> findByEquipoNombre(String nombrePokemon);
+    List<PokemonEquipo> findByEquipo(String nombrePokemon);
     List<Player> findByNivelGreaterThanEqual(int nivel);
     List<Player> findByLogrosNombre(String nombreLogro);
 

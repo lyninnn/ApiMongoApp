@@ -15,19 +15,19 @@ public class PlayerDTO {
     @Id
     private String id;
 
-    @Field(name = "nombre")
+
     @Schema(description = "Nombre del jugador", example = "Ash Lin")
     private String nombre;
 
-    @Field(name = "nivel")
+
     @Schema(description = "Nivel del jugador", example = "24")
     private int nivel;
 
-    @Field(name = "equipo")
+
     @Schema(description = "Equipo de Pokémon del jugador")
     private List<PokemonEquipo> equipo;
 
-    @Field(name = "logros")
+
     @Schema(description = "Logros del jugador")
     private List<Logro> logros;
 
