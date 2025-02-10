@@ -16,7 +16,7 @@ public class Player {
     @Schema(description = "ID único del jugador", example = "67a3af56d41661b5ce072fe5")
     private String id;
 
-    @Field(name = "name")
+
     @Schema(description = "Nombre del jugador", example = "Ash Lin")
     private String nombre;
 

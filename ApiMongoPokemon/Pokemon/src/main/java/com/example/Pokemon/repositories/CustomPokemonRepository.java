@@ -2,10 +2,10 @@ package com.example.Pokemon.repositories;
 
 import com.example.Pokemon.models.Pokemon;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface CustomPokemonRepository {
-    public abstract Pokemon findById(String id);
-    public abstract ArrayList<Pokemon> findPokemonByGreaterThan(double duration);
+    Pokemon findById(String id);
+    List<Pokemon> findPokemonsByNivelGreaterThan(int nivel);
+
 }
