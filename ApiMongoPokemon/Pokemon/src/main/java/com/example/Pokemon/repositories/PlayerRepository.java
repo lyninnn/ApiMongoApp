@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface PlayerRepository extends MongoRepository<Player, String> {
 
-    List<PokemonEquipo> findByEquipo(String nombrePokemon);
+
     List<Player> findByNivelGreaterThanEqual(int nivel);
     List<Player> findByLogrosNombre(String nombreLogro);
 

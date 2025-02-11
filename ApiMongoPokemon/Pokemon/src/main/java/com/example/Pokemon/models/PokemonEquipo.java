@@ -15,5 +15,6 @@ public class PokemonEquipo {
     private String pokemonId;
 
     @Schema(description = "Apodo del Pokémon", example = "Char")
+    @Field(name = "equipo.apodo")
     private String apodo;
 }

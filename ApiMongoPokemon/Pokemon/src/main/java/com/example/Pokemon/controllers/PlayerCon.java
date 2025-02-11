@@ -51,12 +51,6 @@ public class PlayerCon {
         return playerService.getPlayersByNivelGreaterThan(level);
     }
 
-    // Buscar jugadores por nombre de Pokémon en su equipo
-    @GetMapping("/team")
-    @Operation(summary = "Buscar jugadores por Pokémon en su equipo", description = "Devuelve una lista de jugadores que tienen un Pokémon específico en su equipo")
-    public List<Player> getPlayersByTeamPokemon(@RequestParam(value = "pokemon") String pokemon) {
-        return playerService.getPlayersByEquipoNombre(pokemon);
-    }
 
     // Buscar jugadores por nombre de logro
     @GetMapping("/achievements")

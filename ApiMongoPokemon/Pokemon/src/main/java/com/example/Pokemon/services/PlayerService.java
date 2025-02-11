@@ -35,9 +35,6 @@ public class PlayerService {
         return playerRepository.findByNivelGreaterThanEqual(nivel);
     }
 
-    public List<Player> getPlayersByEquipoNombre(String nombrePokemon) {
-        return playerRepository.findByEquipoNombre(nombrePokemon);
-    }
 
     public List<Player> getPlayersByLogrosNombre(String nombreLogro) {
         return playerRepository.findByLogrosNombre(nombreLogro);
