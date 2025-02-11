@@ -37,20 +37,20 @@ public class PokemonCon {
 
     @GetMapping("/name/{nombre}")
     @Operation(summary = "Buscar Pokémon por nombre", description = "Devuelve un Pokémon según su nombre")
-    public Optional<Pokemon> getPokemonByName(@PathVariable("nombre") String nombre) {
+    public Optional<Pokemon> getPokemonByNombre(@PathVariable("nombre") String nombre) {
         Optional<Pokemon> pokemon = pokemonService.getPokemonByNombre(nombre);
         return pokemon;
     }
 
     @GetMapping("/type/{tipo}")
     @Operation(summary = "Buscar Pokémon por tipo", description = "Devuelve una lista de Pokémon según el tipo especificado")
-    public List<Pokemon> getPokemonsByType(@PathVariable("tipo") String tipo) {
+    public List<Pokemon> getPokemonsByTipo(@PathVariable("tipo") String tipo) {
         return pokemonService.getPokemonsByTipo(tipo);
     }
 
     @GetMapping("/level")
     @Operation(summary = "Buscar Pokémon por nivel", description = "Devuelve una lista de Pokémon cuyo nivel es mayor o igual al especificado")
-    public List<Pokemon> getPokemonsByLevel(@RequestParam(value = "level") int level) {
+    public List<Pokemon> getPokemonsBynivel(@RequestParam(value = "level") int level) {
         return pokemonService.getPokemonsByNivelGreaterThan(level);
     }
 
@@ -80,7 +80,7 @@ public class PokemonCon {
 
     @DeleteMapping("/delete")
     @Operation(summary = "Eliminar un Pokémon por nombre", description = "Elimina un Pokémon de la base de datos según su nombre")
-    public ResponseEntity<String> deletePokemonByName(@RequestParam("name") String name) {
+    public ResponseEntity<String> deletePokemonByNombre(@RequestParam("name") String name) {
         boolean isDeleted = pokemonService.deletePokemonByNombre(name);
         if(isDeleted){
             return new ResponseEntity<>(name, HttpStatus.OK);
@@ -121,7 +121,7 @@ public class PokemonCon {
 
     @GetMapping("/levelAbove")
     @Operation(summary = "Buscar Pokémon por nivel usando MongoTemplate", description = "Devuelve una lista de Pokémon cuyo nivel es mayor que el especificado")
-    public List<Pokemon> getPokemonsByLevelAbove(@RequestParam("level") int level) {
+    public List<Pokemon> getPokemonsByNivelAbove(@RequestParam("level") int level) {
         return pokemonService.getPokemonNamesByNivelGreaterThan(level);
     }
 

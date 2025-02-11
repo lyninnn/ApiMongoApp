@@ -39,7 +39,7 @@ public class PlayerCon {
     // Buscar jugador por nombre
     @GetMapping("/name/{nombre}")
     @Operation(summary = "Buscar jugador por nombre", description = "Devuelve un jugador según su nombre")
-    public Optional<Player> getPlayerByName(@PathVariable("nombre") String nombre) {
+    public Optional<Player> getPlayerByNombre(@PathVariable("nombre") String nombre) {
         Optional<Player> player = playerService.getPlayerByNombre(nombre);
         return player;
     }
@@ -47,7 +47,7 @@ public class PlayerCon {
     // Buscar jugadores por nivel
     @GetMapping("/level")
     @Operation(summary = "Buscar jugadores por nivel", description = "Devuelve una lista de jugadores cuyo nivel es mayor o igual al especificado")
-    public List<Player> getPlayersByLevel(@RequestParam(value = "level") int level) {
+    public List<Player> getPlayersByNivel(@RequestParam(value = "level") int level) {
         return playerService.getPlayersByNivelGreaterThan(level);
     }
 
@@ -55,14 +55,14 @@ public class PlayerCon {
     // Buscar jugadores por nombre de logro
     @GetMapping("/achievements")
     @Operation(summary = "Buscar jugadores por logro", description = "Devuelve una lista de jugadores que tienen un logro específico")
-    public List<Player> getPlayersByAchievements(@RequestParam(value = "achievement") String achievement) {
+    public List<Player> getPlayersByLogros(@RequestParam(value = "achievement") String achievement) {
         return playerService.getPlayersByLogrosNombre(achievement);
     }
 
     // Contar jugadores por nivel
     @GetMapping("/countByLevel")
     @Operation(summary = "Contar jugadores por nivel", description = "Devuelve la cantidad de jugadores cuyo nivel es mayor o igual al especificado")
-    public ResponseEntity<Integer> countPlayersByLevel(@RequestParam(value = "level") int level) {
+    public ResponseEntity<Integer> countPlayersByNivel(@RequestParam(value = "level") int level) {
         int count = playerService.countPlayersByNivelGreaterThan(level);
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
@@ -96,7 +96,7 @@ public class PlayerCon {
     // Eliminar jugador por nombre
     @DeleteMapping("/delete")
     @Operation(summary = "Eliminar un jugador por nombre", description = "Elimina un jugador de la base de datos según su nombre")
-    public ResponseEntity<String> deletePlayerByName(@RequestParam("name") String name) {
+    public ResponseEntity<String> deletePlayerByNombre(@RequestParam("name") String name) {
         boolean isDeleted = playerService.deletePlayerByNombre(name);
         if(isDeleted){
             return new ResponseEntity<>(name, HttpStatus.OK);
@@ -141,7 +141,7 @@ public class PlayerCon {
     // Buscar jugadores por nivel usando MongoTemplate
     @GetMapping("/levelAbove")
     @Operation(summary = "Buscar jugadores por nivel usando MongoTemplate", description = "Devuelve una lista de jugadores cuyo nivel es mayor que el especificado")
-    public List<Player> getPlayersByLevelAbove(@RequestParam("level") int level) {
+    public List<Player> getPlayersByNivelAbove(@RequestParam("level") int level) {
         return playerService.getPlayersByNivelGreaterThanCustom(level);
     }
 }
